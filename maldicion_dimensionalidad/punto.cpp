@@ -44,16 +44,14 @@ int main()
         for (int i = 0; i < n_p[j]; i++)
             points[i] = new int [3];
 
-        for (int i = 0; i < n_p[j]; i++)
-        {
-            completar_aleatorio(points, n_p[j]);
-            auto start = chrono::system_clock::now();
-            
-            calcular_distancia(x, y, z, points, n_p[j]);
 
-            auto final = chrono::system_clock::now();
-            times[j] = final - start;
-        }
+        completar_aleatorio(points, n_p[j]);
+        auto start = chrono::system_clock::now();
+        
+        calcular_distancia(x, y, z, points, n_p[j]);
+
+        auto final = chrono::system_clock::now();
+        times[j] = final - start;
 
     }
     
