@@ -89,89 +89,55 @@ void basic_r_tree_test() try {
   fail_test(e);
 }
 
-// int main() {
-//   Rectangle<2> r;
-//   r[0] = Interval(1, 2);
-//   r[1] = Interval(1, 2);
-//   Rectangle<2> r2;
-//   r2[0] = Interval(1, 3);
-//   r2[1] = Interval(1, 3);
-
-//   Rectangle<2> r3;
-//   r3[0] = Interval(2, 2);
-//   r3[1] = Interval(3, 3);
-
-//   for (Interval i : r) {
-//     std::cout << i.begin() << " " << i.end() << std::endl;
-//   }
-
-//   std::cout << overlaps(r, r2) << std::endl;
-
-//   RTree<2, std::string, 5>::Node my_node;
-//   std::cout << "Printing the node" << std::endl;  
-
-//   for (RTree<2, std::string, 5>::SpatialObject current : my_node) {
-//     std::cout << "IN" << std::endl;
-//   }
-
-//   RTree<2, std::string, 5> r_tree;
-//   r_tree.insert(r, "key");
-//   r_tree.insert(r2, "akey"); 
-//   r_tree.insert(r3, "bkey"); 
-//   r_tree.insert(r, "ckey");
-//   r_tree.insert(r2, "dkey");
-//   r_tree.insert(r2, "d1key");
-//   r_tree.insert(r2, "dk2ey");
-//   r_tree.insert(r2, "dk2ey");
-//   r_tree.insert(r2, "dke223y");
-//   r_tree.insert(r2, "dkey23");
-//   r_tree.insert(r2, "dke23y");
-//   r_tree.insert(r2, "dke23y");
-//   r_tree.insert(r2, "dkey2");
-//   r_tree.insert(r2, "dkeD y");  
-//   r_tree.insert(r3, "eke Dy");
-//   r_tree.insert(r3, "fkeySDF");
-//   r_tree.insert(r3, "gkeyFF ");
-
-//   std::cout << "ID: " << (*r_tree.root_pointer_)[0].identifier << std::endl;
-
-//   std::cout << "printing tree" << std::endl;
-//   r_tree.tree_tour(r_tree.root_pointer_, 0);
-
-//   basic_r_tree_test();
-//   return 0;
-// }
-
-
 int main() {
   Rectangle<2> r;
-  r[0] = Interval(1, 1);
-  r[1] = Interval(2, 2);
-  //r[2] = Interval(1, 2);
+  r[0] = Interval(1, 2);
+  r[1] = Interval(1, 2);
   Rectangle<2> r2;
-  r2[0] = Interval(2, 2);
-  r2[1] = Interval(3, 3);
-  //r2[2] = Interval(1, 2);
+  r2[0] = Interval(1, 3);
+  r2[1] = Interval(1, 3);
 
- 
+  Rectangle<2> r3;
+  r3[0] = Interval(2, 2);
+  r3[1] = Interval(3, 3);
+
+  for (Interval i : r) {
+    std::cout << i.begin() << " " << i.end() << std::endl;
+  }
+
+  std::cout << overlaps(r, r2) << std::endl;
+
+  RTree<2, std::string, 5>::Node my_node;
+  std::cout << "Printing the node" << std::endl;  
+
+  for (RTree<2, std::string, 5>::SpatialObject current : my_node) {
+    std::cout << "IN" << std::endl;
+  }
 
   RTree<2, std::string, 5> r_tree;
+  r_tree.insert(r, "key");
+  r_tree.insert(r2, "akey"); 
+  r_tree.insert(r3, "bkey"); 
+  r_tree.insert(r, "ckey");
+  r_tree.insert(r2, "dkey");
+  r_tree.insert(r2, "d1key");
+  r_tree.insert(r2, "dk2ey");
+  r_tree.insert(r2, "dk2ey");
+  r_tree.insert(r2, "dke223y");
+  r_tree.insert(r2, "dkey23");
+  r_tree.insert(r2, "dke23y");
+  r_tree.insert(r2, "dke23y");
+  r_tree.insert(r2, "dkey2");
+  r_tree.insert(r2, "dkeD y");  
+  r_tree.insert(r3, "eke Dy");
+  r_tree.insert(r3, "fkeySDF");
+  r_tree.insert(r3, "gkeyFF ");
 
-  r_tree.insert(r, "keeeey");
-  r_tree.insert(r2, "key");
-  r_tree.insert(r, "keeeey");
-  r_tree.insert(r2, "key1");r_tree.insert(r, "keeeey12");
-  r_tree.insert(r2, "key2");r_tree.insert(r, "keeeey13");
-  r_tree.insert(r2, "key3");r_tree.insert(r, "keeeey14");
-  // r_tree.insert(r2, "key4");//r_tree.insert(r, "keeeey15");
-  // r_tree.insert(r2, "key5");//r_tree.insert(r, "keeeey16");
-  // r_tree.insert(r2, "key6");//r_tree.insert(r, "keeeey17");
-  // r_tree.insert(r2, "key7");//r_tree.insert(r, "keeeey18");
-  // r_tree.insert(r2, "key8");//r_tree.insert(r, "keeeey19");
-  // r_tree.insert(r2, "key9");//r_tree.insert(r, "keeeey20");
-  // r_tree.insert(r2, "key11");//
+  std::cout << "ID: " << (*r_tree.root_pointer_)[0].identifier << std::endl;
 
-  // r_tree.printarbol(r_tree.rootpointer,0);
+  std::cout << "printing tree" << std::endl;
+  r_tree.tree_tour(r_tree.root_pointer_, 0);
 
+  basic_r_tree_test();
   return 0;
 }
